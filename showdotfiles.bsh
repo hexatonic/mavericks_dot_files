@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+SWITCH=$1
+
+case $SWITCH in
+  on)
+      defaults write com.apple.finder AppleShowAllFiles -boolean true
+      killall Finder
+      ;;
+
+  off)
+      defaults write com.apple.finder AppleShowAllFiles -boolean false
+      killall Finder
+      ;;
+
+  *)
+      echo "Usage: $0 <on|off>"
+
+esac
+  
